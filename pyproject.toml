@@ -1,6 +1,6 @@
 [project]
-name = "Undock"
-version = "0.1.0"
+name = "undock"
+version = "0.1.1"
 authors = [
     { name = "Jason Lo", email = "lcmjlo@gmail.com" }
 ]
