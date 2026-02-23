@@ -1,9 +1,10 @@
 name: "Publish"
-
+# To trigger a release, create a new tag and push it to the repository:
+# git tag -a v0.1.0 -m v0.1.0
+# git push --tags
 on:
   push:
     tags:
-      # Publish on any tag starting with a `v`, e.g., v0.1.0
       - v*
 
 jobs:
@@ -17,10 +18,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Install uv
+      - name: Setup UV
         uses: astral-sh/setup-uv@v7
-      - name: Install Python 3.14
-        run: uv python install 3.14
+      - name: Install Python
+        run: uv python install
       - name: Build
         run: uv build
       - name: Publish
